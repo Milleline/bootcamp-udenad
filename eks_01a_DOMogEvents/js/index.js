@@ -4,6 +4,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	let number = 5;
 
+	let maxValue = 10;
+	let minValue = 0;
 	// Knapper.
 	let plusButton = document.querySelector("#btn-count-increase");
 	let minusButton = document.querySelector("#btn-count-decrease");
@@ -21,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	
 	// Går ind og giver mulighed for at klikke på plus som så tilføjer 1 enhed pr klik.
 	plusButton.addEventListener("click", () => {
-		if(number < 10){ // sætter begrænser på, så der ikke kan klikkes højere end tallet 10.
+		if(number < maxValue){ // sætter begrænser på, så der ikke kan klikkes højere end tallet 10.
 		number++; //tilføjer en.
 		updateNumber();
 		}
@@ -29,7 +31,7 @@ document.addEventListener("DOMContentLoaded", () => {
 	});
 	// Går ind og giver mulighed for at klikke på minus som så fjerner 1 enhed pr klik.
 	minusButton.addEventListener("click", () => {
-		if(number > 0){ //sætter begrænser på, så der ikke kan klikkes lavere end tallet 0.
+		if(number > minValue){ //sætter begrænser på, så der ikke kan klikkes lavere end tallet 0.
 		number--; //fjerner en. 
 		updateNumber();
 		}
