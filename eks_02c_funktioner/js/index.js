@@ -13,4 +13,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// skriv din kode her...
 
+	function hils(navn1){
+	
+		console.log("hej med dig " + navn1 + "!!")
+
+		hils ("Aske");
+
+		const text = "Hej med dig";
 }); // Afslutter: DOMContentLoaded
