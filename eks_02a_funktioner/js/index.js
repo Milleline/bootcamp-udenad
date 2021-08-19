@@ -12,20 +12,16 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	// skriv din kode her...
 
-	function hils(navn1){
+	function hils(navn){
 	
-		console.log("hej med dig " + navn1 + "!!")
+		console.log("hej med dig " + navn + "!!")
 
-		// console.log( text + " " + navn1 + "!!" )
-		// console.log(`Hej med dig ${navn1}`)
 	}
 
 		hils ("Aske");
-		hils ("Mille");
 
 	const text = "Hej med dig";
-	// 	navn1 = Mille;
-	// 	navn2 = Aske;
+
 
 
 }); // Afslutter: DOMContentLoaded
