@@ -2,8 +2,9 @@
 // "DOMContentLoaded" event'en sørger for, at Javascriptet først kører når hele HTML dokumentet er indlæst
 document.addEventListener("DOMContentLoaded", () => {
 
+	// Tallet der bliver vist fra start.
 	let number = 5;
-
+	// Begrænsninger for hvor lavt og højt tallene går.
 	let maxValue = 10;
 	let minValue = 0;
 	// Knapper.
@@ -21,20 +22,41 @@ document.addEventListener("DOMContentLoaded", () => {
 
 	updateNumber();
 	
-	// Går ind og giver mulighed for at klikke på plus som så tilføjer 1 enhed pr klik.
-	plusButton.addEventListener("click", () => {
-		if(number < maxValue){ // sætter begrænser på, så der ikke kan klikkes højere end tallet 10.
-		number++; //tilføjer en.
-		updateNumber();
+	function calcNumber(event) {
+
+	// console.log(event);
+
+		if (event.target.attributes.id.nodeValue === "btn-count-increase") {
+			if (number < maxValue){
+			number++;
+			updateNumber();
+			}
+		} 	
+		else if (event.target.attributes.id.nodeValue === "btn-count-decrease") {
+			if (number > minValue){
+			number--;
+			updateNumber();
+			}
 		}
+	}
+
+	// Går ind og giver mulighed for at klikke på plus som så tilføjer 1 enhed pr klik.
+	plusButton.addEventListener("click", (event) => {
+		calcNumber(event);
+		// if(number < maxValue){ 
+		// number++; 
+		// updateNumber();
+		// }
 
 	});
+	
 	// Går ind og giver mulighed for at klikke på minus som så fjerner 1 enhed pr klik.
-	minusButton.addEventListener("click", () => {
-		if(number > minValue){ //sætter begrænser på, så der ikke kan klikkes lavere end tallet 0.
-		number--; //fjerner en. 
-		updateNumber();
-		}
+	minusButton.addEventListener("click", (event) => {
+		calcNumber(event);
+		// if(number > minValue){
+		// number--;
+		// updateNumber();
+		// }
 	});
 
 
